@@ -21,26 +21,34 @@ body{
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  color:white;
+  color:#eaeaff;
 
-  /* Galaxy + black gradient */
+  /* Galaxy aesthetic */
   background:
-    radial-gradient(circle at top, rgba(255,255,255,0.15), transparent 40%),
-    radial-gradient(circle at bottom, rgba(0,0,0,0.9), #000),
-    url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1200');
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.2), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(173,216,230,0.2), transparent 40%),
+    url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1400');
   background-size:cover;
   background-position:center;
 }
 
 .card{
-  backdrop-filter:blur(14px);
-  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(12px);
+  background:rgba(0,0,30,0.6);
   border-radius:20px;
   padding:30px;
   width:90%;
   max-width:520px;
   text-align:left;
-  box-shadow:0 10px 40px rgba(0,0,0,0.7);
+  box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+h1{
+  text-align:center;
+  margin-bottom:20px;
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:1px;
 }
 
 .line{
@@ -52,23 +60,28 @@ body{
 .highlight{
   margin-top:15px;
   font-weight:600;
-  color:#cfcfff;
+  color:#cfd8ff;
 }
 
 .meta{
   margin-top:20px;
   font-size:12px;
-  opacity:0.6;
+  opacity:0.7;
 }
 
-/* Hidden strip */
-.reveal-box{
+/* Reveal section */
+.reveal-container{
+  display:flex;
+  align-items:center;
+  gap:10px;
   margin-top:15px;
+}
+
+.reveal-box{
   background:black;
   color:black;
-  padding:8px;
+  padding:8px 12px;
   border-radius:6px;
-  text-align:center;
   font-size:13px;
   cursor:pointer;
   user-select:none;
@@ -77,6 +90,11 @@ body{
 
 .reveal-box.active{
   color:white;
+}
+
+.click-text{
+  font-size:12px;
+  opacity:0.7;
 }
 
 /* Footer */
@@ -93,18 +111,23 @@ footer{
 
 <div class="card">
 
-  <div class="line">144p → normal pic</div>
-  <div class="line">240p → okay, decent</div>
-  <div class="line">360p → nice… especially Kaj u</div>
-  <div class="line">720p → clean shot, Barfi approves</div>
-  <div class="highlight">1080p (moon - Poorna) → clarity peak level</div>
+  <h1>Babu The Bigdail Billi Analysis</h1>
 
-  <!-- Hidden joke -->
-  <div class="reveal-box" onclick="this.classList.toggle('active')">
-    tap to reveal
+  <div class="line">144p → normal pic</div>
+  <div class="line">240p → decent clarity</div>
+  <div class="line">360p → Barfi stealing attention</div>
+  <div class="line">720p → Kaju looks elite here</div>
+  <div class="highlight">1080p (moon - Poorna) → peak clarity achieved</div>
+
+  <!-- Reveal -->
+  <div class="reveal-container">
+    <div class="reveal-box" onclick="toggleReveal(this)">
+      hidden message
+    </div>
+    <div class="click-text">Click here</div>
   </div>
 
-  <div class="meta">This website was created in 13 minutes</div>
+  <div class="meta">This website was created in 8 minutes</div>
 
 </div>
 
@@ -113,13 +136,14 @@ footer{
 </footer>
 
 <script>
-document.querySelector('.reveal-box').addEventListener('click', function(){
-  if(this.classList.contains('active')){
-    this.innerText = "This is a joke my friend";
+function toggleReveal(el){
+  el.classList.toggle("active");
+  if(el.classList.contains("active")){
+    el.innerText = "This is A Joke My Dear Friend";
   } else {
-    this.innerText = "tap to reveal";
+    el.innerText = "hidden message";
   }
-});
+}
 </script>
 
 </body>
