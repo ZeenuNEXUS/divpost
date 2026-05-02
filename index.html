@@ -1,1 +1,129 @@
-index
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Picture Quality</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .card {
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .sub {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 20px;
+    }
+
+    .line {
+      font-size: 18px;
+      margin: 12px 0;
+      transition: all 0.3s ease;
+    }
+
+    .line:hover {
+      transform: translateX(5px);
+      color: #00d4ff;
+    }
+
+    .highlight {
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 20px;
+      color: #00d4ff;
+    }
+
+    .caption {
+      margin-top: 30px;
+      font-size: 14px;
+      opacity: 0.7;
+      letter-spacing: 1px;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 13px;
+      opacity: 0.6;
+      letter-spacing: 1px;
+    }
+
+    .hidden {
+      position: absolute;
+      bottom: 5px;
+      font-size: 10px;
+      opacity: 0.05;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Nancy / Poorna's Picture Quality Upgrade</h1>
+    <div class="sub">A completely unbiased analysis</div>
+
+    <div class="line">144p → Yeah yeah, normal pic</div>
+    <div class="line">240p → Okay… not bad</div>
+    <div class="line">360p → Wait, this is kinda nice</div>
+    <div class="line">720p → Excuse me? Model vibes</div>
+    <div class="highlight">1080p (moon) → NASA called… they found the real moon here</div>
+
+    <div class="caption">From pixels to perfection</div>
+  </div>
+
+  <footer>
+    Created by divyanshu (DivTech)
+  </footer>
+
+  <div class="hidden">THIS IS A JOKE BY DIV</div>
+
+</body>
+</html>
